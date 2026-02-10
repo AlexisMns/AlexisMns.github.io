@@ -142,7 +142,8 @@ nav {
 }
 
 .github-stats {
-    max-width: 400px;
+    max-width: 1000px;
+    width: 80%;
     height: auto;
     border-radius: 10px;
     box-shadow: 0 4px 15px var(--shadow);
@@ -188,5 +189,28 @@ nav {
     to {
     opacity: 1;
     transform: translateY(0);
+    }
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+    nav {
+        padding: 1rem 2rem;
+    }
+
+    .nav-links {
+        gap: 1.5rem;
+    }
+
+    .accueil {
+        padding: 0 2rem;
+    }
+
+    .accueil-titre {
+        font-size: clamp(2.5rem, 10vw, 5rem);
+    }
+
+    .accueil-soustitre {
+        font-size: clamp(1rem, 3vw, 1.5rem);
     }
 }
