@@ -2,13 +2,16 @@
 /* TODO */
 /* GERER LE RESPONSIVE */
 
-:root { /* des variable mais pour couleur */
-    --primary: #1a1a1a; 
-    --secondary: #f4f1ea; 
-    --accent: #d4a574; 
-    --text: #2d2d2d; 
+/* des variable mais pour couleur */
+:root { 
+    --primary: #7582bb;  /* Bleu lavande */
+    --secondary: #1a1b26;  /* Bleu très foncé */
+    --accent: #bb9af7;  /* Violet pastel */
+    --text: #a9b1d6;  
     --light: #ffffff; 
-    --shadow: rgba(0, 0, 0, 0.1);
+    --shadow: rgba(187, 154, 247, 0.2);
+    --bgnav: rgba(26, 27, 38, 0.95);
+    --bgapp: linear-gradient(135deg, #1a1b26 0%, #24283b 100%);
 }
 
 * {
@@ -35,7 +38,7 @@ nav {
     left: 0;
     right: 0;
     z-index: 1000;
-    background: rgba(244, 241, 234, 0.95);
+    background: var(--bgnav);
     backdrop-filter: blur(10px);
     padding: 1.5rem 3rem;
     border-bottom: 1px solid rgba(26, 26, 26, 0.1);
@@ -100,7 +103,7 @@ nav {
     justify-content: center;
     position: relative;
     padding: 0 3rem;
-    background: linear-gradient(135deg, #f4f1ea 0%, #e8e3d8 100%);
+    background: var(--bgapp);
 }
 
 .accueil-content {
@@ -129,11 +132,34 @@ nav {
     animation: fadeInUp 1s ease 0.3s forwards;
 }
 
+
+.accueil-actions {
+    display: flex;
+    flex-direction: column;  
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.github-stats {
+    max-width: 400px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px var(--shadow);
+    opacity: 0;
+    animation: fadeInUp 1s ease 0.9s forwards;
+    transition: transform 0.3s ease;
+}
+
+.github-stats:hover {
+    transform: translateY(-5px);
+}
+
 .btnProjet {
     display: inline-block; /* pour que le lien soit traité comme un bouton et puisse avoir des padding, etc. */
     padding: 1.2rem 3rem; 
     background: var(--primary);
-    color: var(--light);
+    color: var(--light); /* couleur du texte du bouton */
     text-decoration: none;
     font-weight: 600;
     letter-spacing: 1px;
