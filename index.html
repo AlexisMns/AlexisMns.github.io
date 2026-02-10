@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <!-- div pour vue -->
     <div id="app">
       <nav>
         <div class="nav-content">
@@ -26,6 +27,14 @@
           </ul>
         </div>
       </nav>
+      <section id="accueil" class="accueil">
+        <!-- id permet de faire fonctionner la redirection avec le href #accueil -->
+        <div class="accueil-content">
+          <h1 class="accueil-titre">{{ portfolio.titre }}</h1>
+          <p class="accueil-soustitre">{{ portfolio.soustitre }}</p>
+          <a href="#projets" class="btnProjet">Découvrir mes projets</a>
+        </div>
+      </section>
       <header></header>
     </div>
     <script src="app.js"></script>

@@ -1,9 +1,13 @@
-:root {
-    --primary: #1a1a1a;
-    --secondary: #f4f1ea;
-    --accent: #d4a574;
-    --text: #2d2d2d;
-    --light: #ffffff;
+
+/* TODO */
+/* GERER LE RESPONSIVE */
+
+:root { /* des variable mais pour couleur */
+    --primary: #1a1a1a; 
+    --secondary: #f4f1ea; 
+    --accent: #d4a574; 
+    --text: #2d2d2d; 
+    --light: #ffffff; 
     --shadow: rgba(0, 0, 0, 0.1);
 }
 
@@ -17,14 +21,16 @@ body {
     font-family: "Work Sans", sans-serif;
     background: var(--secondary);
     color: var(--text);
-    overflow-x: hidden;
+    overflow-x: hidden; /* empêche le scroll horizontal si jamais un élément dépasse la largeur de l'écran */
 }
+
 #app {
-    min-height: 100vh;
+    min-height: 100vh; 
 }
+
 /* Navigation */
 nav {
-    position: fixed;
+    position: fixed; /* pour que la nav reste en haut même quand on scroll */
     top: 0;
     left: 0;
     right: 0;
@@ -46,7 +52,7 @@ nav {
 .logo {
     font-family: "Playfair Display", serif;
     font-size: 1.5rem;
-    font-weight: 900;
+    font-weight: 900; 
     color: var(--primary);
     letter-spacing: -1px;
 }
@@ -68,20 +74,93 @@ nav {
 }
 
 .nav-links a::after {
-    content: "";
+    content: "";   /*creer un element vide */
     position: absolute;
-    bottom: -5px;
+    bottom: -5px;  /* endessous du lien */
     left: 0;
-    width: 0;
+    width: 0; /* invisible au départ */
     height: 2px;
     background: var(--accent);
-    transition: width 0.3s ease;
+    transition: width 0.3s ease; /* animation de la barre qui s'étend */
 }
 
 .nav-links a:hover {
-    color: var(--accent);
+    color: var(--accent); /* change la couleur du texte au survol */
 }
 
 .nav-links a:hover::after {
-    width: 100%;
+    width: 100%; /* la barre s'étend sur toute la largeur du lien au survol et donc la rend visible*/
+}
+
+/* Section Accueil */
+.accueil {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 0 3rem;
+    background: linear-gradient(135deg, #f4f1ea 0%, #e8e3d8 100%);
+}
+
+.accueil-content {
+    max-width: 1200px;
+    text-align: center;
+    animation: fadeInUp 1s ease; /* utilisation du keyframe fadeinup */
+}
+
+.accueil-titre {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(3rem, 8vw, 7rem);
+    font-weight: 900;
+    color: var(--primary);
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    letter-spacing: -3px;
+}
+
+.accueil-soustitre {
+    font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+    color: var(--text);
+    font-weight: 300;
+    margin-bottom: 3rem;
+    letter-spacing: 1px;
+    opacity: 0;
+    animation: fadeInUp 1s ease 0.3s forwards;
+}
+
+.btnProjet {
+    display: inline-block; /* pour que le lien soit traité comme un bouton et puisse avoir des padding, etc. */
+    padding: 1.2rem 3rem; 
+    background: var(--primary);
+    color: var(--light);
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 1px;
+    border-radius: 0;
+    transition: all 0.4s ease;
+    border: 2px solid var(--primary);
+    opacity: 0;
+    animation: fadeInUp 1s ease 0.6s forwards; 
+}
+
+.btnProjet:hover {
+    background: transparent;
+    color: var(--primary);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px var(--shadow);
+}
+
+
+/* LES ANIMATIONS 'KEYFRAME' */
+/* fadeInUp : en gros apparait en montant legeremenbt sur axe y.  Duré de l'animation gerer dans btnProjet et accueilsoutitre*/
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+    opacity: 1;
+    transform: translateY(0);
+    }
 }
