@@ -524,6 +524,18 @@ nav {
     margin-bottom: 1rem;
     font-weight: 600;
 }
+.btn-lien {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background: var(--primary);
+    color: var(--light);
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 1px;
+    border-radius: 40px; 
+    transition: all 0.4s ease;
+    border: 2px solid var(--bgnav);
+}
 
 /* LES ANIMATIONS 'KEYFRAME' */
 /* fadeInUp : apparait en montant legeremenbt sur axe y.  Duré de l'animation gerer dans btnProjet et accueilsoutitre*/

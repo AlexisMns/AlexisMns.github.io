@@ -132,7 +132,15 @@
               <h3 class="projet-titre">{{ projet.titre }}</h3>
               <p class="projet-description">{{ projet.description }}</p>
               <div class="projet-tags">
-                <span class="tag" v-for="tag in projet.tags" :key="tag">{{ tag }}</span>
+                <span class="tag" v-for="tag in projet.tags" :key="tag"
+                  >{{ tag }}</span
+                >
+                <a :href="projet.lien" class="btn-lien" target="_blank"
+                  >Voir projet</a
+                >
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </div>
