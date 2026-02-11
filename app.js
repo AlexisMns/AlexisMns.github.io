@@ -9,13 +9,14 @@ createApp({
         return {
             portfolio: {
                 nom: "Miens Alexis",
-                titre: "Développeur d'applications / Web",
-                soustitre: "blablabla",
+                titre: "Etudiant en BTS SIO SLAM",
+                soustitre: "Actuellement etudiant en bts sio slam (devoppement d'application)," + 
+                "je suis passionné par le développement d'applications et la création de solutions innovantes. " + 
+                "Mon objectif est de devenir un développeur compétent et polyvalent, capable de concevoir des applications performantes et adaptées aux besoins des utilisateurs.",
                 apropos: {            
                     description: "Passionné par le développement web," +
                         "je crée des expériences numériques innovantes et performantes." +
-                        "Avec une expertise en HTML, CSS, JavaScript et Vue.js, je transforme les idées en réalité." + 
-                        "Découvrez mes projets et contactez-moi pour collaborer sur votre prochain projet web.",
+                        "Avec une expertise en HTML, CSS, JavaScript et Vue.js, je transforme les idées en réalité.",                      
                     passion: "J'adore résoudre des problèmes complexes et créer des interfaces utilisateur intuitives. " +
                         "Mon objectif est de développer des applications web qui offrent une expérience utilisateur exceptionnelle tout en étant performantes et maintenables.",
                 },
