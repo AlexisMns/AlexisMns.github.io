@@ -715,6 +715,7 @@ nav {
         flex: 0 0 85vw;  /* 85% de la largeur de l'écran */
         max-width: 85vw;
         scroll-snap-align: center;  
+        max-height: 70%; /* Limite la hauteur des cartes pour les petits écrans */ 
     }
     
     .projet-image {
