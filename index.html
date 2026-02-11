@@ -103,6 +103,20 @@
             </div>
           </div>
         </div>
+        <!-- FRISE -->
+        <div class="timeline-horizontal">
+          <div
+            class="timeline-item"
+            v-for="parcours in portfolio.parcours"
+            :key="parcours"
+          >
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span class="timeline-annee">{{ parcours.periode }}</span>
+              <h3 class="timeline-titre">{{ parcours.titre }}</h3>
+            </div>
+          </div>
+        </div>
       </section>
     </div>
     <script src="app.js"></script>

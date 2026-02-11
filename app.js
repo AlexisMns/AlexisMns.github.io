@@ -19,6 +19,20 @@ createApp({
                     passion: "J'adore résoudre des problèmes complexes et créer des interfaces utilisateur intuitives. " +
                         "Mon objectif est de développer des applications web qui offrent une expérience utilisateur exceptionnelle tout en étant performantes et maintenables.",
                 },
+                parcours: [
+                    {
+                        periode : "2024 - 2026",
+                        titre : "BTS SIO SLAM"
+                    },
+                    {
+                        periode : "2025",
+                        titre : "Stage developpement d'une application C#"
+                    },
+                    {
+                        periode : "2026",
+                        titre : "Stage Academie police clermont ferrand"
+                    },
+                ],
                 competences: [
                     "Vue.js",
                     "JavaScript",

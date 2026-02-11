@@ -339,6 +339,88 @@ nav {
     transform: translateX(10px);
 }
 
+/* Timeline horizontale */
+.timeline-horizontal {
+    max-width: 1000px;
+    margin: 5rem auto 0;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 2rem 0;
+}
+
+/* Ligne horizontale */
+.timeline-horizontal::before {
+    content: '';
+    position: absolute;
+    left: 5%;
+    right: 5%;
+    top: 40px;
+    height: 3px;
+    background: linear-gradient(to right, var(--accent), var(--primary), var(--accent));
+}
+
+.timeline-item {
+    position: relative;
+    text-align: center;
+    flex: 1;
+    z-index: 2;
+}
+
+/* Point sur la ligne */
+.timeline-dot {
+    width: 20px;
+    height: 20px;
+    background: var(--accent);
+    border: 4px solid var(--secondary);
+    border-radius: 50%;
+    margin: 0 auto 1.5rem;
+    position: relative;
+    box-shadow: 0 0 0 4px var(--accent);
+    transition: all 0.3s ease;
+}
+
+.timeline-item:hover .timeline-dot {
+    transform: scale(1.4);
+    box-shadow: 0 0 0 8px var(--accent);
+}
+
+.timeline-content {
+    background: var(--secondary);
+    padding: 1.5rem 1rem;
+    margin: 30px;
+    border-radius: 8px;
+    min-height: 160px;
+    border-top: 3px solid var(--accent);
+    transition: all 0.3s ease;
+}
+
+.timeline-item:hover .timeline-content {
+    background: var(--secondary);
+    transform: translateY(-10px);
+}
+
+.timeline-annee {
+    display: block;
+    background: var(--accent);
+    color: var(--secondary);
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-bottom: 0.8rem;
+    display: inline-block;
+}
+
+.timeline-titre {
+    font-family: "Playfair Display", serif;
+    font-size: 1.2rem;
+    color: var(--primary);
+    margin: 0;
+    line-height: 1.3;
+}
+
 /* LES ANIMATIONS 'KEYFRAME' */
 /* fadeInUp : en gros apparait en montant legeremenbt sur axe y.  Duré de l'animation gerer dans btnProjet et accueilsoutitre*/
 @keyframes fadeInUp {
@@ -457,6 +539,41 @@ nav {
     .apropos-content {
         grid-template-columns: 1fr;
         gap: 2rem;
+    }
+    .timeline-horizontal {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    
+    .timeline-horizontal::before {
+        left: 20px;
+        right: auto;
+        top: 0;
+        bottom: 0;
+        width: 3px;
+        height: auto;
+        background: linear-gradient(to bottom, var(--accent), var(--primary));
+    }
+    
+    .timeline-item {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+        text-align: left;
+    }
+    
+    .timeline-dot {
+        margin: 0;
+        flex-shrink: 0;
+    }
+    
+    .timeline-content {
+        flex: 1;
+        width: 300px;
+    }
+    
+    .timeline-titre {
+        font-size: 1.1rem;
     }
 
 
