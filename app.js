@@ -34,6 +34,22 @@ createApp({
         };
     },
     mounted() {
+        // Menu burger toggle
+        const burger = document.querySelector('.burger'); // 
+        const navLinks = document.querySelector('.nav-links'); // 
+        
+        burger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            burger.classList.toggle('active'); 
+        });
+        
+        // Fermer le menu quand on clique sur un lien
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                burger.classList.remove('active');
+            });
+        });
         // Pour plus tard; gestion des scrolls smooth, animations, etc.
     }      
 }).mount("#app");

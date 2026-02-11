@@ -95,6 +95,35 @@ nav {
     width: 100%; /* la barre s'étend sur toute la largeur du lien au survol et donc la rend visible*/
 }
 
+/* Bouton burger invis */
+.burger {
+    display: none;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.burger div {
+    width: 25px;
+    height: 3px;
+    background: var(--text);
+    margin: 5px;
+    transition: all 0.3s ease;
+    border-radius: 3px;
+}
+
+/* Animation du burger (fairela croix) */
+.burger.active div:nth-child(1) {
+    transform: rotate(45deg) translate(8px, 8px);   /* voir app js pour le active */
+}
+
+.burger.active div:nth-child(2) {
+    opacity: 0;
+}
+
+.burger.active div:nth-child(3) {
+    transform: rotate(-45deg) translate(8px, -8px);
+}
+
 /* Section Accueil */
 .accueil {
     min-height: 100vh;
@@ -178,6 +207,84 @@ nav {
     box-shadow: 0 10px 30px var(--shadow);
 }
 
+/* Container des bulles */
+.bulles-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none; /* Les bulles ne bloquent pas les clics */
+    z-index: 1; /* Derrière le contenu */
+}
+
+/* Style des bulles */
+.bulle {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    animation: float 20s infinite ease-in-out;
+}
+
+.bulle img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+
+/* Positions et animations différentes pour chaque bulle */
+.bulle-1 {
+    top: 15%;
+    left: 10%;
+    animation-delay: 0s;
+    animation-duration: 15s;
+}
+
+.bulle-2 {
+    top: 25%;
+    left: 85%;
+    animation-delay: 2s;
+    animation-duration: 18s;
+}
+
+.bulle-3 {
+    top: 60%;
+    left: 15%;
+    animation-delay: 4s;
+    animation-duration: 20s;
+}
+
+.bulle-4 {
+    top: 70%;
+    left: 80%;
+    animation-delay: 1s;
+    animation-duration: 17s;
+}
+
+.bulle-5 {
+    top: 40%;
+    left: 5%;
+    animation-delay: 3s;
+    animation-duration: 19s;
+}
+
+.bulle-6 {
+    top: 50%;
+    left: 90%;
+    animation-delay: 5s;
+    animation-duration: 16s;
+}
+
+
 
 /* LES ANIMATIONS 'KEYFRAME' */
 /* fadeInUp : en gros apparait en montant legeremenbt sur axe y.  Duré de l'animation gerer dans btnProjet et accueilsoutitre*/
@@ -192,25 +299,148 @@ nav {
     }
 }
 
+/* Animation de flottement */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0.7;
+    }
+    25% {
+        transform: translateY(-30px) rotate(5deg);
+        opacity: 0.9;
+    }
+    50% {
+        transform: translateY(-15px) rotate(-5deg);
+        opacity: 0.6;
+    }
+    75% {
+        transform: translateY(-40px) rotate(3deg);
+        opacity: 0.8;
+    }
+}
+
 /* Responsive */
+/* Responsive Mobile */
 @media screen and (max-width: 768px) {
+    /* Afficher le burger */
+    .burger {
+        display: block;
+    }
+    
+    /* Menu mobile */
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        height: 100vh;
+        width: 70%;
+        background: var(--bgnav);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 3rem;
+        transition: right 0.3s ease;
+        backdrop-filter: blur(20px);
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
+    }
+    
+    .nav-links.active {
+        right: 0; /* Affiche le menu en le faisant glisser depuis la droite voir app js pour le active */
+    }
+    
     nav {
         padding: 1rem 2rem;
     }
-
-    .nav-links {
-        gap: 1.5rem;
+    
+    .logo {
+        font-size: 1.3rem;
     }
-
+    
+    /* Accueil */
     .accueil {
         padding: 0 2rem;
     }
-
+    
     .accueil-titre {
         font-size: clamp(2.5rem, 10vw, 5rem);
     }
-
+    
     .accueil-soustitre {
         font-size: clamp(1rem, 3vw, 1.5rem);
+    }
+    
+    /* Bouton et stats */
+    .github-stats {
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    .accueil-actions {
+        gap: 1.5rem;
+    }
+    
+    .btnProjet {
+        padding: 1rem 2rem;
+        font-size: 0.9rem;
+    }
+    
+    /* Bulles plus petites */
+    .bulle {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .bulle img {
+        width: 30px;
+        height: 30px;
+    }
+    
+    /* cacher quelque bulle pour les ecran petit */
+    .bulle-5, .bulle-6 {
+        display: none;
+    }
+}
+
+/* Petits mobiles */
+@media screen and (max-width: 480px) {
+    nav {
+        padding: 1rem;
+    }
+    
+    .logo {
+        font-size: 1.2rem;
+    }
+    
+    .accueil {
+        padding: 0 1rem;
+    }
+    
+    .accueil-titre {
+        font-size: clamp(2rem, 8vw, 3rem);
+        letter-spacing: -1px;
+    }
+    
+    .btnProjet {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.85rem;
+    }
+    
+    .nav-links {
+        width: 80%;
+    }
+}
+
+/* Tablette */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .accueil {
+        padding: 0 2.5rem;
+    }
+    
+    .github-stats {
+        width: 90%;
+    }
+    
+    .nav-links {
+        gap: 2rem;
     }
 }
