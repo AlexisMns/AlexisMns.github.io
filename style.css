@@ -422,7 +422,7 @@ nav {
 }
 
 /* LES ANIMATIONS 'KEYFRAME' */
-/* fadeInUp : en gros apparait en montant legeremenbt sur axe y.  Duré de l'animation gerer dans btnProjet et accueilsoutitre*/
+/* fadeInUp : apparait en montant legeremenbt sur axe y.  Duré de l'animation gerer dans btnProjet et accueilsoutitre*/
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -560,6 +560,7 @@ nav {
         align-items: center;
         gap: 1.5rem;
         text-align: left;
+        padding-right: 1rem;
     }
     
     .timeline-dot {
@@ -569,7 +570,8 @@ nav {
     
     .timeline-content {
         flex: 1;
-        width: 300px;
+        width: 100%;  
+        max-width: 100%;
     }
     
     .timeline-titre {
