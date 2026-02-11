@@ -465,6 +465,7 @@ nav {
         transform 0.4s ease,
         box-shadow 0.4s ease;
     cursor: pointer;
+    height: 100%;
 }
 
 .projet-carte:hover {
@@ -715,11 +716,10 @@ nav {
         flex: 0 0 85vw;  /* 85% de la largeur de l'écran */
         max-width: 85vw;
         scroll-snap-align: center;  
-        max-height: 70%; /* Limite la hauteur des cartes pour les petits écrans */ 
     }
     
     .projet-image {
-        height: 250px; 
+        height: 200px; 
     }
     
     /* Cache la scrollbar */
@@ -730,6 +730,7 @@ nav {
     .projets-grille {
         -ms-overflow-style: none;  /* IE et Edge */
         scrollbar-width: none;  /* Firefox */
+        grid-template-columns: 1fr;
     }
 
     .scroll-hint {
