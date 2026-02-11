@@ -80,8 +80,8 @@
           </div>
           <div class="bulle bulle-6">
             <img
-              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
-              alt="Node.js"
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg"
+              alt="php"
             />
           </div>
         </div>
@@ -116,6 +116,23 @@
               <h3 class="timeline-titre">{{ parcours.titre }}</h3>
             </div>
           </div>
+        </div>
+      </section>
+      <section id="projets" class="projets">
+        <h2 class="section-titre">Mes Projets</h2>
+        <p class="scroll">Glissez pour voir plus</p>
+        <div class="projets-grille">
+          <div
+            class="projet-carte"
+            v-for="projet in portfolio.projets"
+            :key="projet"
+          >
+            <div class="projet-image">{{ projet.image }}</div>
+            <div class="projet-contenu">
+              <h3 class="projet-titre">{{ projet.titre }}</h3>
+              <p class="projet-description">{{ projet.description }}</p>
+              <div class="projet-tags">
+                <span class="tag" v-for="tag in projet.tags" :key="tag">{{ tag }}</span>
         </div>
       </section>
     </div>

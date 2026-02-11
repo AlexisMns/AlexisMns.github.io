@@ -3,17 +3,40 @@
 /* GERER LE RESPONSIVE */
 
 /* des variable mais pour couleur */
-:root { 
-    --primary: #7582bb;  /* Bleu lavande */
-    --secondary: #1a1b26;  /* Bleu très foncé */
-    --accent: #bb9af7;  /* Violet pastel */
+/* :root { 
+    --primary: #7582bb;  
+    --secondary: #1a1b26;  
+    --accent: #bb9af7;  
     --text: #a9b1d6;  
     --light: #ffffff; 
     --shadow: rgba(187, 154, 247, 0.2);
     --bgnav: rgba(26, 27, 38, 0.95);
     --bgapp: linear-gradient(135deg, #1a1b26 0%, #24283b 100%);
-}
+} */
+ /* Theme sunset */
+/* :root {    
+    --primary: #ff6b6b;
+    --secondary: #1a1423;    
+    --accent: #feca57;
+    --text: #e8d5c4;
+    --textPlusSombre: #e09049;
+    --light: #ffffff;
+    --shadow: rgba(254, 202, 87, 0.25);
+    --bgnav: rgba(26, 20, 35, 0.95);
+    --bgapp: linear-gradient(135deg, #1a1423 0%, #2d1b3d 100%);
+} */
 
+:root {    
+    --primary: #4fc3f7;
+    --secondary: #0a1929;    
+    --accent: #00bcd4;
+    --text: #b0bec5;
+    --textPlusSombre: #5a98b8;
+    --light: #ffffff;
+    --shadow: rgba(79, 195, 247, 0.2);
+    --bgnav: rgba(10, 25, 41, 0.95);
+    --bgapp: linear-gradient(135deg, #0a1929 0%, #132f4c 100%);
+}
 * {
     margin: 0;
     padding: 0;
@@ -292,7 +315,7 @@ nav {
     background: var(--bgapp);
 }
 
-.section-titre {
+.section-titre {   /* Section titre fonctionne pour toute les section qui ont un titre de section */
     font-family: "Playfair Display", serif;
     font-size: clamp(2.5rem, 5vw, 4rem);
     font-weight: 900;
@@ -419,6 +442,87 @@ nav {
     color: var(--primary);
     margin: 0;
     line-height: 1.3;
+}
+
+/* Projects Section */
+.projets {
+    padding: 8rem 3rem;
+    background: var(--secondary);
+}
+
+.projets-grille {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 3rem;
+}
+
+.projet-carte {
+    background: var(--light);
+    overflow: hidden;
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
+    cursor: pointer;
+}
+
+.projet-carte:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 60px var(--shadow);
+}
+
+.projet-image {
+    width: 100%;
+    height: 300px;
+    background: linear-gradient(135deg, var(--accent), var(--primary));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Playfair Display", serif;
+    font-size: 3rem;
+    color: var(--light);
+    font-weight: 900;
+}
+
+.projet-contenu {
+    padding: 2rem;
+}
+
+.projet-titre {
+    font-family: "Playfair Display", serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--primary);
+}
+
+.projet-description {
+    color: var(--textPlusSombre);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.projet-tags {
+    display: flex;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+}
+
+.tag {
+    padding: 0.4rem 1rem;
+    background: var(--secondary);
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text);
+}
+.scroll {
+    display: none;  /* Caché par défaut */
+    text-align: center;
+    color: var(--accent);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
 }
 
 /* LES ANIMATIONS 'KEYFRAME' */
@@ -577,7 +681,47 @@ nav {
     .timeline-titre {
         font-size: 1.1rem;
     }
+    /* carrousel pour project */
+    .projets {
+        padding: 6rem 0;  
+    }
+    
+    .projets-grille {
+        display: flex;  
+        overflow-x: auto;  /* Active le scroll horizontal */
+        overflow-y: hidden;
+        gap: 1.5rem;
+        padding: 0 2rem;  /* Padding sur les côtés */
+        scroll-snap-type: x mandatory;  
+        -webkit-overflow-scrolling: touch;  /* Scroll fluide sur iOS */
+        width: 100%;
+        max-width: 100vw;
+        margin: 0;
+    }
+    
+    .projet-carte {
+        flex: 0 0 85vw;  /* 85% de la largeur de l'écran */
+        max-width: 85vw;
+        scroll-snap-align: center;  
+    }
+    
+    .projet-image {
+        height: 250px; 
+    }
+    
+    /* Cache la scrollbar */
+    .projets-grille::-webkit-scrollbar {
+        display: none;
+    }
+    
+    .projets-grille {
+        -ms-overflow-style: none;  /* IE et Edge */
+        scrollbar-width: none;  /* Firefox */
+    }
 
+    .scroll-hint {
+        display: block;
+    }
 
 }
 
