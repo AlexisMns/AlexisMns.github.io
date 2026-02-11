@@ -47,18 +47,23 @@ createApp({
                     {
                         titre : "Application de gestion de médicaments",
                         description : "Développement d'une application de gestion de médicaments, médecin et visiteur en C#. L'application permet de suivre les stocks et générer des rapports.",
-                        image : "test",
+                        image : "/assets/gsb.png",
                         tags : ["C#", "MySQL", "WinForms"],
                         lien :"https://github.com/AlexisMns/AppliGSB",
                     },
                     {
                         titre : "Classement musical français hebdomadaire",
                         description : "Création d'un site web affichant le classement musical français hebdomadaire en utilisant Vue.js pour le frontend et Node.js pour le backend.",
-                        image : "test",
+                        image : "/assets/vibz.png",
                         tags : ["Vue", "javascript", "typescript" ,"express" ,"mysql"],
                         lien :"https://vibz-music.netlify.app/",
                     }
                 ],
+                contact: {
+                    mail: "mailto:miens.sio@gmail.com",
+                    github: "https://github.com/AlexisMns",
+                    linkedin: "https://www.linkedin.com/in/alexis-miens/",
+                }
             },
         };
     },

@@ -120,14 +120,16 @@
       </section>
       <section id="projets" class="projets">
         <h2 class="section-titre">Mes Projets</h2>
-        <p class="scroll">Glissez pour voir plus</p>
+        <p class="scroll">&#8592; Glissez pour voir plus &#8594;</p>
         <div class="projets-grille">
           <div
             class="projet-carte"
             v-for="projet in portfolio.projets"
             :key="projet"
           >
-            <div class="projet-image">{{ projet.image }}</div>
+            <div class="projet-image">
+              <img :src="projet.image" alt="Image" class="image" />
+            </div>
             <div class="projet-contenu">
               <h3 class="projet-titre">{{ projet.titre }}</h3>
               <p class="projet-description">{{ projet.description }}</p>
@@ -143,6 +145,34 @@
           </div>
         </div>
       </section>
+      <section id="contact" class="contact">
+        <h2 class="section-titre">Contact</h2>
+        <div class="contact-contenue">
+          <div class="contact-liens">
+            <a
+              :href="portfolio.contact.mail"
+              class="contact-lien"
+              target="_blank"
+              >Email</a
+            >
+            <a
+              :href="portfolio.contact.github"
+              class="contact-lien"
+              target="_blank"
+              >GitHub</a
+            >
+            <a
+              :href="portfolio.contact.linkedin"
+              class="contact-lien"
+              target="_blank"
+              >LinkedIn</a
+            >
+          </div>
+        </div>
+      </section>
+      <footer>
+        <p>© 2026 {{ portfolio.nom }}. Tous droits réservés.</p>
+      </footer>
     </div>
     <script src="app.js"></script>
   </body>
