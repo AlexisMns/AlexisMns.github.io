@@ -26,19 +26,26 @@
     --bgapp: linear-gradient(135deg, #1a1423 0%, #2d1b3d 100%);
 } */
 
-:root {    
-    --primary: #4fc3f7;
-    --secondary: #0a1929;    
-    --accent: #00bcd4;
-    --text: #b0bec5;
-    --textPlusSombre: #5a98b8;
+:root {
+    --primary: #b08968;
+    --secondary: #2a1c12;
+    --accent: #e6ccb2;
+    --text: #f3e5d8;
+    --textPlusSombre: #d2b48c;
     --light: #ffffff;
-    --lightMoinCLaire: #e1f5fe;
-    --shadow: rgba(79, 195, 247, 0.2);
-    --bgnav: rgba(10, 25, 41, 0.95);
-    --bgapp: linear-gradient(135deg, #0a1929 0%, #132f4c 100%);
-    --noirFooter: #0a0a0a;
+    --lightMoinCLaire: #fdf6ee;
+    --shadow: rgba(176, 137, 104, 0.3);
+    --bgnav: rgba(42, 28, 18, 0.95);
+    --bgapp: linear-gradient(135deg, #2a1c12 0%, #4b2e1f 100%);
+    --noirFooter: #1a0f08;
 }
+
+
+
+
+
+
+
 * {
     margin: 0;
     padding: 0;
