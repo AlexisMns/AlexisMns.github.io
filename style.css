@@ -767,6 +767,35 @@ nav {
         width: 80%;
     }
 
+    .projet-contenu {
+        padding: 1rem;
+
+    }
+    .projet-titre { 
+        font-size: 1.4rem;
+    }
+
+    .projet-description {
+        font-size: 0.9rem;
+        line-height: 1.4;
+    }
+
+    .projets-grille {
+        gap: 2rem;
+        grid-template-columns: 1fr;
+        max-height:  150vh; /* Limite la hauteur du carrousel pour éviter qu'il prenne trop de place sur les petits écrans */
+    }
+    .projet-image {
+        height: 150px;
+    }
+    .btn-lien {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.8rem;
+    }
+    .projet-tags {
+        gap: 0.5rem;
+    }
+
 }
 
 /* Tablette */
