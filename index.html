@@ -86,8 +86,24 @@
           </div>
         </div>
       </section>
-
-      <header></header>
+      <section id="apropos" class="apropos">
+        <h2 class="section-titre">À propos</h2>
+        <div class="apropos-content">
+          <div class="apropos-text">
+            <p>{{ portfolio.apropos.description }}</p>
+            <p>{{ portfolio.apropos.passion }}</p>
+          </div>
+          <div class="competence-grille">
+            <div
+              class="competence-item"
+              v-for="competence in portfolio.competences"
+              :key="competence"
+            >
+              {{ competence }}
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
     <script src="app.js"></script>
   </body>

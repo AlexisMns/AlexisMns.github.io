@@ -16,8 +16,10 @@ createApp({
                         "je crée des expériences numériques innovantes et performantes." +
                         "Avec une expertise en HTML, CSS, JavaScript et Vue.js, je transforme les idées en réalité." + 
                         "Découvrez mes projets et contactez-moi pour collaborer sur votre prochain projet web.",
+                    passion: "J'adore résoudre des problèmes complexes et créer des interfaces utilisateur intuitives. " +
+                        "Mon objectif est de développer des applications web qui offrent une expérience utilisateur exceptionnelle tout en étant performantes et maintenables.",
                 },
-                compétences: [
+                competences: [
                     "Vue.js",
                     "JavaScript",
                     "HTML/CSS",
@@ -50,6 +52,20 @@ createApp({
                 burger.classList.remove('active');
             });
         });
-        // Pour plus tard; gestion des scrolls smooth, animations, etc.
+        // Smooth scroll
+          document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+            // Sélectionne tous les liens d'ancrage
+            anchor.addEventListener("click", function (e) {
+              // Ajoute un écouteur d'événement pour le clic
+              e.preventDefault(); // Empêche le comportement par défaut du lien en gros pas les saut directe quand on clique sur un lien comme ça je peux custom
+              const target = document.querySelector(this.getAttribute("href")); // Récupère la cible de l'ancre
+              if (target) {
+                target.scrollIntoView({
+                  behavior: "smooth",
+                  block: "start",
+                }); // Fait défiler en douceur jusqu'à la cible
+              }
+            });
+          });
     }      
 }).mount("#app");

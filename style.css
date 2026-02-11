@@ -109,6 +109,7 @@ nav {
     margin: 5px;
     transition: all 0.3s ease;
     border-radius: 3px;
+
 }
 
 /* Animation du burger (fairela croix) */
@@ -284,7 +285,59 @@ nav {
     animation-duration: 16s;
 }
 
+/* A propos section */
 
+.apropos {
+    padding: 8rem 3rem;
+    background: var(--bgapp);
+}
+
+.section-titre {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 900;
+    color: var(--primary);
+    margin-bottom: 3rem;
+    text-align: center;
+    letter-spacing: -2px;
+}
+
+.apropos-content {
+    max-width: 900px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.apropos-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text);
+}
+
+.apropos-text p {
+    margin-bottom: 1.5rem;
+}
+
+.competence-grille {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.competence-item {
+    padding: 1.2rem;
+    background: var(--secondary);
+    border-left: 3px solid var(--accent);
+    font-weight: 600;
+    transition: transform 0.3s ease;
+}
+
+.competence-item:hover {
+    transform: translateX(10px);
+}
 
 /* LES ANIMATIONS 'KEYFRAME' */
 /* fadeInUp : en gros apparait en montant legeremenbt sur axe y.  Duré de l'animation gerer dans btnProjet et accueilsoutitre*/
@@ -334,7 +387,7 @@ nav {
         right: -100%;
         height: 100vh;
         width: 70%;
-        background: var(--bgnav);
+        background: var(--secondary);
         flex-direction: column;
         justify-content: center;
         align-items: center;
@@ -399,6 +452,14 @@ nav {
     .bulle-5, .bulle-6 {
         display: none;
     }
+
+    /* A propos */
+    .apropos-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+
 }
 
 /* Petits mobiles */
@@ -428,6 +489,7 @@ nav {
     .nav-links {
         width: 80%;
     }
+
 }
 
 /* Tablette */
