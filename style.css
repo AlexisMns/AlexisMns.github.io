@@ -164,7 +164,7 @@ nav {
     align-items: center;
     justify-content: center;
     position: relative;
-    padding: 0 3rem;
+    padding: 6rem 3rem 0;
     background: var(--bgapp);
 }
 
@@ -677,7 +677,7 @@ footer {
     
     /* Accueil */
     .accueil {
-        padding: 0 2rem;
+        padding: 6rem 2rem 0;
     }
     
     .accueil-titre {
@@ -817,7 +817,7 @@ footer {
     }
     
     .accueil {
-        padding: 0 1rem;
+        padding: 6rem 1rem 0;
     }
     
     .accueil-titre {
@@ -868,7 +868,7 @@ footer {
 /* Tablette */
 @media screen and (min-width: 769px) and (max-width: 1024px) {
     .accueil {
-        padding: 0 2.5rem;
+        padding: 6rem 2.5rem 0;
     }
     
     .github-stats {
