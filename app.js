@@ -7,18 +7,20 @@ const { createApp } = Vue;
 createApp({
     data() {
         return {
+            modalProjet: null, // null = modal fermé
             portfolio: {
                 nom: "Miens Alexis",
                 titre: "Etudiant en BTS SIO SLAM",
-                soustitre: "Actuellement etudiant en bts sio slam (devoppement d'application)," + 
-                "je suis passionné par le développement d'applications et la création de solutions innovantes. " + 
-                "Mon objectif est de devenir un développeur compétent et polyvalent, capable de concevoir des applications performantes et adaptées aux besoins des utilisateurs.",
+                soustitre: "Etudiant en bts sio slam (devoppement d'application)," + 
+                "je suis passionné par le développement web" + 
+                "Mon objectif est de devenir un développeur compétent et polyvalent, capable de créer des applications web performantes et innovantes.",
                 apropos: {            
-                    description: "Passionné par le développement web," +
-                        "je crée des expériences numériques innovantes et performantes." +
-                        "Avec une expertise en HTML, CSS, JavaScript et Vue.js, je transforme les idées en réalité.",                      
-                    passion: "J'adore résoudre des problèmes complexes et créer des interfaces utilisateur intuitives. " +
-                        "Mon objectif est de développer des applications web qui offrent une expérience utilisateur exceptionnelle tout en étant performantes et maintenables.",
+                    description: "Étudiant en BTS SIO SLAM au lycée Sidoine Apollinaire de Clermont-Ferrand, " +
+                        "je suis passionné par le développement d'applications web et desktop. " +
+                        "J'ai eu l'occasion de travailler sur des projets concrets lors de mes deux stages, " +
+                        "ce qui m'a permis de consolider mes compétences techniques et de découvrir le monde professionnel.",                      
+                    passion: "Curieux et autonome, j'aime apprendre de nouvelles technologies et relever des défis techniques. " +
+                        "Mon objectif est de continuer à progresser en développement et de mettre mes compétences au service de projets utiles et bien conçus.",
                 },
                 parcours: [
                     {
@@ -39,6 +41,10 @@ createApp({
                     "JavaScript",
                     "HTML/CSS",
                     "Node.js",
+                    "Express",
+                    "TypeScript",
+                    "JWT",
+                    "Asp.NET core",
                     "Git",
                     "Sql/MySQL",
                     "php",
@@ -46,19 +52,156 @@ createApp({
                 ],
                 projets: [
                     {
-                        titre : "Application de gestion de médicaments",
+                        titre : "Site de gestion de formation pour l'academie de police de Clermont-Ferrand",
+                        description : "Modernisation du site de gestion de formation de l'academie de police de Clermont-Ferrand",
+                        image : "/assets/StagePolice.png",
+                        tags : ["PHP", "MySQL", "JS", "Bootstrap"],
+                        details: {
+                            contexte: "Le site offre de formation de l’académie de police permet actuellement de rechercher et de consulter des formations via une interface utilisateur. Il propose également une gestion de ces formations à travers un back office." + 
+                            "\nCependant, cette application repose sur des technologies obsolètes, notamment PHP 5 et une base de données Microsoft Access, ce qui ne répond plus aux normes actuelles en matière de sécurité, de performance et de maintenabilité. Il a donc été demandé de moderniser entièrement le site afin de mieux répondre aux besoins du maître d’ouvrage (MOA).",
+                            objectif: "Moderniser le site de gestion des formations de l'Académie de Police en migrant de PHP 5 / Access vers PHP 8 / MySQL avec Docker, en ajoutant un CRUD complet, une recherche plein texte et un back-office responsive.",
+                            difficultes: "Mise en place d'une hiérarchie dynamique entre niveaux via des requêtes fetch asynchrones, avec réinitialisation des DataTables et gestion d'état session PHP / sessionStorage côté client",
+                            competencesAcquises: [
+                                "Gérer des sauvegardes",
+                                "Traiter des demandes concernant les applications",
+                                "Participer à l’évolution d’un site Web exploitant les données de l’organisation",
+                                "Planifier les activités",
+                                "Accompagner les utilisateurs dans la mise en place d’un service",
+                                "Mettre en place son environnement d’apprentissage personnel",
+                            ]
+                        }
+                    },
+                    {
+                        titre : "Vibz",
+                        description : "Vibz est une application web moderne qui vous permet de découvrir et d'écouter le top 20 des musique de la semaines youtube.",
+                        image : "/assets/vibz.png",
+                        tags : ["Vue", "javascript", "typescript" ,"express" ,"mysql", "node"],
+                        lien :"https://vibz-music.netlify.app/",
+                        details: {
+                            contexte: "Le site de classement musical français hebdomadaire est une application web qui affiche le top 20 des musiques les plus populaires en France chaque semaine.",
+                            objectif: "Créer une application web qui récupère et affiche le classement musical en temps réel.",
+                            difficultes: "La gestion des appels API externes et la mise en place d'un backend avec authentification ont été les points les plus complexes à implémenter.",
+                            competencesAcquises: [
+                                "Gérer des sauvegardes",
+                                "Traiter des demandes concernant les applications",
+                                "Participer à l’évolution d’un site Web exploitant les données de l’organisation",
+                                "Planifier les activités",
+                                "Déployer un service",
+                                "Mettre en place son environnement d’apprentissage personnel",
+                            ]
+                        }
+                    },
+                    {
+                        titre : "Gsb",
                         description : "Développement d'une application de gestion de médicaments, médecin et visiteur en C#. L'application permet de suivre les stocks et générer des rapports.",
                         image : "/assets/gsb.png",
                         tags : ["C#", "MySQL", "WinForms"],
                         lien :"https://github.com/AlexisMns/AppliGSB",
+                        details: {
+                            contexte:" Mise en place d'une application de gestion de médicaments, médecin et visiteur en C#. L'application permet de suivre les stocks et générer des rapports.",
+                            objectif: "Développer une application desktop permettant de gérer les médicaments, les médecins et les visiteurs médicaux, avec génération de rapports automatisés.",
+                            difficultes: "La difficulté rencontré était la compréhension de l'architecture",
+                            competencesAcquises: [
+                                "Gérer des sauvegardes",
+                                "Mettre en place son environnement d’apprentissage personnel",
+                            ]
+                        }
                     },
                     {
-                        titre : "Classement musical français hebdomadaire",
-                        description : "Création d'un site web affichant le classement musical français hebdomadaire en utilisant Vue.js pour le frontend et Node.js pour le backend.",
-                        image : "/assets/vibz.png",
-                        tags : ["Vue", "javascript", "typescript" ,"express" ,"mysql"],
-                        lien :"https://vibz-music.netlify.app/",
-                    }
+                        titre : "Portfolio personnel",
+                        description : "Création d'un portfolio personnel pour présenter mes compétences, projets et parcours. Le site est responsive et utilise Vue.js",
+                        image : "/assets/portfolio.png",
+                        tags : ["JS", "Vue", "HTML", "CSS"],
+                        details: {
+                            contexte: "Projet personnel réalisé dans le cadre de mon BTS SIO pour présenter mon parcours, mes compétences et mes projets de manière claire et professionnelle.",
+                            objectif: "Concevoir un portfolio responsive en Vue.js, sans framework CSS, avec une navigation fluide et une structure de données centralisée pour faciliter les mises à jour.",
+                            difficultes: "La principale difficulté a été de gérer le responsive sans framework CSS, notamment pour le menu burger et le carrousel de projets sur mobile.",
+                            competencesAcquises: [
+                                "Référencer les services en ligne de l’organisation et mesurer leur visibilité",
+                                "Participer à l’évolution d’un site Web exploitant les données de l’organisation",
+                            ]
+                        }
+                    },
+                    {
+                        titre : "Sport Sio",
+                        description : "Développement d'une application de gestion des sports et des sportifs.",
+                        image : "/assets/sportsio.png",
+                        tags : ["C#", "MySQL", "WinForms"],
+                        lien :"https://github.com/AlexisMns/ApplicationSportFormulaire",
+                        details: {
+                            contexte: "Mise en place d'une application de gestion des sports et des sportifs en C#. L'application permet de suivre les sports et les sportifs, avec une interface utilisateur simple et efficace.",
+                            objectif: "Développer une application desktop permettant de gérer les sports et les sportifs, avec une interface utilisateur intuitive et des fonctionnalités de suivi des performances.",
+                            competencesAcquises: [
+                                "Traiter des demandes concernant les applications",
+                                "Analyser les objectifs et les modalités d’organisation d’un projet",
+                                "Planifier les activités",
+                                "Réaliser les tests d’intégration et d’acceptation d’un service",
+                                "Mettre en place son environnement d’apprentissage personnel",
+                            ]
+                        }
+                    },
+                    {
+                        titre : "AP Maintenance corrective et/ou évolution de jeux",
+                        description : "Projet c# qui regroupe trois jeux : un pendu , un morpion et un mastermind accessible depuis une interface de lancement.",
+                        image : "/assets/pendu.jpg",
+                        tags : ["C#", "MySQL", "WinForms"],
+                        lien :"https://github.com/AlexisMns/ProjetJeux",
+                        details: {                          
+                            competencesAcquises: [
+                                "Traiter des demandes concernant les applications",
+                                "Planifier les activités",
+                                "Évaluer les indicateurs de suivi d’un projet et analyser les écarts",
+                            ]
+                        }
+                    },
+                    {
+                        titre : "Snoitome",
+                        description : "Conception et réalisation complète d'un site vitrine promotionnel pour un produit technologique fictif. L'objectif était de présenter les fonctionnalités innovantes d'une boisson fictive.",
+                        image : "/assets/Snoitome.png",
+                        tags : ["HTML", "CSS"],
+                        lien :"https://github.com/AlexisMns/snoitome",
+                        details: {                          
+                            competencesAcquises: [
+                                "Participer à l’évolution d’un site Web exploitant les données de l’organisation",
+                                "Planifier les activités",
+                                "Analyser les objectifs et les modalités d’organisation d’un projet",
+                            ]
+                        }
+                    },
+                    {
+                        titre : "Zengarden",
+                        description : "CSS Zen Garden est un site qui montre l’importance du CSS dans la création d’un site web. "+
+                        "Le principe est d’utiliser une seule page HTML et de changer uniquement la feuille de style. "+
+                        "Chaque design est différent, mais le contenu reste le même. "+
+                        "Cela permet de comprendre le rôle du CSS dans la mise en forme",
+                        image : "/assets/cssZengarden.png",
+                        tags : ["HTML", "CSS"],
+                        lien :"https://alexismns.github.io/CSSZenGarden/",
+                        details: {                          
+                            competencesAcquises: [
+                                "Participer à l’évolution d’un site Web exploitant les données de l’organisation",
+                            ]
+                        }
+                        
+                    },
+                    {
+                        titre : "Agenda",
+                        description : "Application Agenda permettant de créer et gérer des rappels (date, heure, message, fréquence).Elle affiche des alertes à l’échéance et propose des fonctions d’ajout, modification et suppression.",
+                        image : "/assets/agendas.png",
+                        tags : ["C#", "winforms"],
+                        details: {                          
+                            competencesAcquises: [
+                                "Mettre en place son environnement d’apprentissage personnel",
+                            ]
+                        }
+                        
+                    },
+                    {
+                        titre : "Journal - Canard Connecté",
+                        description : "Presentation des datacenter et leurs avenirs",
+                        image : "/assets/canard.png",
+                        tags : ["Actualité","commmunication"],
+                    },               
                 ],
                 contact: {
                     mail: "mailto:miens.sio@gmail.com",
@@ -67,6 +210,16 @@ createApp({
                 }
             },
         };
+    },
+    methods: {
+        ouvrirModal(projet) {
+            this.modalProjet = projet;
+            document.body.style.overflow = 'hidden'; // empêche le scroll derrière la modale
+        },
+        fermerModal() {
+            this.modalProjet = null;
+            document.body.style.overflow = ''; // réactive le scroll
+        }
     },
     mounted() {
         // Menu burger toggle

@@ -14,12 +14,10 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <!-- div pour vue -->
     <div id="app">
       <nav>
         <div class="nav-content">
           <div class="logo">{{portfolio.nom}}</div>
-          <!-- Bouton burger pour mobile -->
           <div class="burger">
             <div></div>
             <div></div>
@@ -33,13 +31,16 @@
           </ul>
         </div>
       </nav>
+
       <section id="accueil" class="accueil">
-        <!-- id permet de faire fonctionner la redirection avec le href #accueil -->
         <div class="accueil-content">
           <h1 class="accueil-titre">{{ portfolio.titre }}</h1>
           <p class="accueil-soustitre">{{ portfolio.soustitre }}</p>
           <div class="accueil-actions">
             <a href="#projets" class="btnProjet">Découvrir mes projets</a>
+            <a href="/assets/Miens_CV.pdf" class="btnProjet" target="_blank"
+              >Mon CV</a
+            >
             <img
               src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=AlexisMns&theme=github_dark"
               alt="GitHub Stats"
@@ -86,6 +87,7 @@
           </div>
         </div>
       </section>
+
       <section id="apropos" class="apropos">
         <h2 class="section-titre">À propos</h2>
         <div class="apropos-content">
@@ -103,7 +105,6 @@
             </div>
           </div>
         </div>
-        <!-- FRISE -->
         <div class="timeline-horizontal">
           <div
             class="timeline-item"
@@ -118,6 +119,7 @@
           </div>
         </div>
       </section>
+
       <section id="projets" class="projets">
         <h2 class="section-titre">Mes Projets</h2>
         <p class="scroll">&#8592; Glissez pour voir plus &#8594;</p>
@@ -138,13 +140,27 @@
                   >{{ tag }}</span
                 >
               </div>
-              <a :href="projet.lien" class="btn-lien" target="_blank"
-                >Voir projet</a
-              >
+              <div class="projet-btns">
+                <a
+                  v-if="projet.lien"
+                  :href="projet.lien"
+                  class="btn-lien"
+                  target="_blank"
+                  >Voir projet</a
+                >
+                <button
+                  v-if="projet.details"
+                  class="btn-details"
+                  @click="ouvrirModal(projet)"
+                >
+                  Détails
+                </button>
+              </div>
             </div>
           </div>
         </div>
       </section>
+
       <section id="contact" class="contact">
         <h2 class="section-titre">Contact</h2>
         <div class="contact-contenue">
@@ -170,9 +186,46 @@
           </div>
         </div>
       </section>
+
       <footer>
         <p>© 2026 {{ portfolio.nom }}. Tous droits réservés.</p>
       </footer>
+
+      <!-- MODALE -->
+      <div class="modal-overlay" v-if="modalProjet" @click.self="fermerModal">
+        <div class="modal">
+          <button class="modal-fermer" @click="fermerModal">✕</button>
+          <h2 class="modal-titre">{{ modalProjet.titre }}</h2>
+          <div class="modal-section" v-if="modalProjet.details.contexte">
+            <h3>Contexte</h3>
+            <p>{{ modalProjet.details.contexte }}</p>
+          </div>
+          <div class="modal-section" v-if="modalProjet.details.objectif">
+            <h3>Objectif</h3>
+            <p>{{ modalProjet.details.objectif }}</p>
+          </div>
+          <div class="modal-section" v-if="modalProjet.details.difficultes">
+            <h3>Difficultés rencontrées</h3>
+            <p>{{ modalProjet.details.difficultes }}</p>
+          </div>
+          <div
+            class="modal-section"
+            v-if="modalProjet.details.competencesAcquises"
+          >
+            <h3>Compétences BTS SIO validées</h3>
+            <div class="modal-competences">
+              <div class="modal-tags">
+                <span
+                  class="tag"
+                  v-for="comp in modalProjet.details.competencesAcquises"
+                  :key="comp"
+                  >{{ comp }}</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <script src="app.js"></script>
   </body>
