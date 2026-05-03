@@ -157,7 +157,7 @@ createApp({
                     {
                         titre : "Snoitome",
                         description : "Conception et réalisation complète d'un site vitrine promotionnel pour un produit technologique fictif. L'objectif était de présenter les fonctionnalités innovantes d'une boisson fictive.",
-                        image : "/assets/Snoitome.png",
+                        image : "/assets/snoitome.png",
                         tags : ["HTML", "CSS"],
                         lien :"https://github.com/AlexisMns/snoitome",
                         details: {                          
