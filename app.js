@@ -80,7 +80,6 @@ createApp({
                         details: {
                             contexte: "Le site de classement musical français hebdomadaire est une application web qui affiche le top 20 des musiques les plus populaires en France chaque semaine.",
                             objectif: "Créer une application web qui récupère et affiche le classement musical en temps réel.",
-                            difficultes: "La gestion des appels API externes et la mise en place d'un backend avec authentification ont été les points les plus complexes à implémenter.",
                             competencesAcquises: [
                                 "Gérer des sauvegardes",
                                 "Traiter des demandes concernant les applications",
