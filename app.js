@@ -158,7 +158,7 @@ createApp({
                         description : "Conception et réalisation complète d'un site vitrine promotionnel pour un produit technologique fictif. L'objectif était de présenter les fonctionnalités innovantes d'une boisson fictive.",
                         image : "/assets/snoitome.png",
                         tags : ["HTML", "CSS"],
-                        lien :"https://github.com/AlexisMns/snoitome",
+                        lien :"https://coco324.github.io/snoitome/produitphare.html",
                         details: {                          
                             competencesAcquises: [
                                 "Participer à l’évolution d’un site Web exploitant les données de l’organisation",
