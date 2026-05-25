@@ -11,16 +11,12 @@ createApp({
             portfolio: {
                 nom: "Miens Alexis",
                 titre: "Etudiant en BTS SIO SLAM",
-                soustitre: "Etudiant en bts sio slam (devoppement d'application)," + 
-                "je suis passionné par le développement web" + 
+                soustitre: "je suis passionné par le développement web. " + 
                 "Mon objectif est de devenir un développeur compétent et polyvalent, capable de créer des applications web performantes et innovantes.",
                 apropos: {            
-                    description: "Étudiant en BTS SIO SLAM au lycée Sidoine Apollinaire de Clermont-Ferrand, " +
-                        "je suis passionné par le développement d'applications web et desktop. " +
-                        "J'ai eu l'occasion de travailler sur des projets concrets lors de mes deux stages, " +
-                        "ce qui m'a permis de consolider mes compétences techniques et de découvrir le monde professionnel.",                      
-                    passion: "Curieux et autonome, j'aime apprendre de nouvelles technologies et relever des défis techniques. " +
-                        "Mon objectif est de continuer à progresser en développement et de mettre mes compétences au service de projets utiles et bien conçus.",
+                    description: "Étudiant passionné par le développement web. Mes stages m’ont permis de renforcer mes compétences techniques et de découvrir le monde professionnel.",
+
+                    passion: "Curieux et autonome, j’aime apprendre de nouvelles technologies et relever des défis pour progresser en développement.",
                 },
                 parcours: [
                     {
@@ -40,10 +36,8 @@ createApp({
                     "Vue.js",
                     "JavaScript",
                     "HTML/CSS",
-                    "Node.js",
-                    "Express",
+                    "Node.js",                 
                     "TypeScript",
-                    "JWT",
                     "Asp.NET core",
                     "Git",
                     "Sql/MySQL",
@@ -57,17 +51,17 @@ createApp({
                         image : "/assets/StagePolice.png",
                         tags : ["PHP", "MySQL", "JS", "Bootstrap"],
                         details: {
-                            contexte: "Le site offre de formation de l’académie de police permet actuellement de rechercher et de consulter des formations via une interface utilisateur. Il propose également une gestion de ces formations à travers un back office." + 
-                            "\nCependant, cette application repose sur des technologies obsolètes, notamment PHP 5 et une base de données Microsoft Access, ce qui ne répond plus aux normes actuelles en matière de sécurité, de performance et de maintenabilité. Il a donc été demandé de moderniser entièrement le site afin de mieux répondre aux besoins du maître d’ouvrage (MOA).",
-                            objectif: "Moderniser le site de gestion des formations de l'Académie de Police en migrant de PHP 5 / Access vers PHP 8 / MySQL avec Docker, en ajoutant un CRUD complet, une recherche plein texte et un back-office responsive.",
-                            difficultes: "Mise en place d'une hiérarchie dynamique entre niveaux via des requêtes fetch asynchrones, avec réinitialisation des DataTables et gestion d'état session PHP / sessionStorage côté client",
+                            contexte: "Le site offre de formation de l’académie de police permet actuellement de rechercher et de consulter des formations via une interface utilisateur." + 
+                            "\nCependant, cette application repose sur des technologies obsolètes",
+                            objectif: "Moderniser le site de gestion des formations de l'Académie de Police ",
+                            difficultes: "Mise en place d'une hiérarchie dynamique entre niveaux ",
                             competencesAcquises: [
-                                "Gérer des sauvegardes",
-                                "Traiter des demandes concernant les applications",
-                                "Participer à l’évolution d’un site Web exploitant les données de l’organisation",
-                                "Planifier les activités",
-                                "Accompagner les utilisateurs dans la mise en place d’un service",
-                                "Mettre en place son environnement d’apprentissage personnel",
+                                "Gérer le patrimooine informatique",
+                                "Répondre aux incidents et aux demandes d’assistance et d’évolution",
+                                "Développer la présence en ligne de l’organisation",
+                                "Travailler en mode projet",
+                                "Mettre a disposition des utilisateurs un service informatique",
+                                "Organiser son développement professionnel",
                             ]
                         }
                     },
@@ -81,12 +75,12 @@ createApp({
                             contexte: "Le site de classement musical français hebdomadaire est une application web qui affiche le top 20 des musiques les plus populaires en France chaque semaine.",
                             objectif: "Créer une application web qui récupère et affiche le classement musical en temps réel.",
                             competencesAcquises: [
-                                "Gérer des sauvegardes",
-                                "Traiter des demandes concernant les applications",
-                                "Participer à l’évolution d’un site Web exploitant les données de l’organisation",
-                                "Planifier les activités",
-                                "Déployer un service",
-                                "Mettre en place son environnement d’apprentissage personnel",
+                                "Gérer le patrimooine informatique",
+                                "Répondre aux incidents et aux demandes d’assistance et d’évolution",
+                                "Développer la présence en ligne de l’organisation",
+                                "Travailler en mode projet",
+                                "Mettre a disposition des utilisateurs un service informatique",
+                                "Organiser son développement professionnel",
                             ]
                         }
                     },
