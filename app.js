@@ -37,8 +37,6 @@ createApp({
                     "JavaScript",
                     "HTML/CSS",
                     "Node.js",                 
-                    "TypeScript",
-                    "Asp.NET core",
                     "Git",
                     "Sql/MySQL",
                     "php",
@@ -48,7 +46,7 @@ createApp({
                     {
                         titre : "Site de gestion de formation pour l'academie de police de Clermont-Ferrand",
                         description : "Modernisation du site de gestion de formation de l'academie de police de Clermont-Ferrand",
-                        image : "/assets/StagePolice.png",
+                        image : "/assets/logoPolice.png",
                         tags : ["PHP", "MySQL", "JS", "Bootstrap"],
                         details: {
                             contexte: "Le site offre de formation de l’académie de police permet actuellement de rechercher et de consulter des formations via une interface utilisateur." + 
@@ -56,11 +54,11 @@ createApp({
                             objectif: "Moderniser le site de gestion des formations de l'Académie de Police ",
                             difficultes: "Mise en place d'une hiérarchie dynamique entre niveaux ",
                             competencesAcquises: [
-                                "Gérer le patrimooine informatique",
+                                "Gérer le patrimoine informatique",
                                 "Répondre aux incidents et aux demandes d’assistance et d’évolution",
                                 "Développer la présence en ligne de l’organisation",
                                 "Travailler en mode projet",
-                                "Mettre a disposition des utilisateurs un service informatique",
+                                "Mettre à disposition des utilisateurs un service informatique",
                                 "Organiser son développement professionnel",
                             ]
                         }
@@ -75,11 +73,11 @@ createApp({
                             contexte: "Le site de classement musical français hebdomadaire est une application web qui affiche le top 20 des musiques les plus populaires en France chaque semaine.",
                             objectif: "Créer une application web qui récupère et affiche le classement musical en temps réel.",
                             competencesAcquises: [
-                                "Gérer le patrimooine informatique",
+                                "Gérer le patrimoine informatique",
                                 "Répondre aux incidents et aux demandes d’assistance et d’évolution",
                                 "Développer la présence en ligne de l’organisation",
                                 "Travailler en mode projet",
-                                "Mettre a disposition des utilisateurs un service informatique",
+                                "Mettre à disposition des utilisateurs un service informatique",
                                 "Organiser son développement professionnel",
                             ]
                         }
